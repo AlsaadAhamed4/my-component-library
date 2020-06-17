@@ -1,6 +1,47 @@
 import styled from "styled-components";
 import { defaultTheme, typeScale, primaryFont } from "../utils";
 
+import { applyStyleModifiers } from "styled-components-modifiers";
+
+const BUTTON_MODIFIERS = {
+    small: () => `
+        font-size : ${typeScale.helperText};
+        padding:8px;
+    `,
+    large: () => `
+    font-size: ${typeScale.header5};
+    padding : 16px 24px;
+    `,
+    warning: () => `
+    background : ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover{
+        background : ${defaultTheme.status.warningColorHover};
+    }
+
+    &:focus{
+        background : ${defaultTheme.status.warningColorHover};
+        outline : 3px solid ${defaultTheme.status.warningColorHover};
+    }
+
+    &:active{
+        background : ${defaultTheme.status.warningColorActive};
+        border: none;
+    }
+    `,
+    secondaryButtonWarning: () => `
+    background : none;
+    border: 2px solid ${defaultTheme.status.warningColor};
+    color:  ${defaultTheme.status.warningColor};
+    outline:none;
+    `,
+    tertiaryButtonWarning: () => `
+    background:none;
+    color:${defaultTheme.status.warningColor};
+    `
+}
+
 const Button = styled.button`
     padding 12px 26px;
     font-size : ${typeScale.paragraph};
@@ -41,6 +82,8 @@ export const PrimaryButton = styled(Button)`
         transition : background 0.2s linear, color 0.2s linear;
         cursor: not-allowed;
     }
+
+    ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
 export const SecondaryButton = styled(Button)`
@@ -55,13 +98,15 @@ export const SecondaryButton = styled(Button)`
         border : 2px solid ${defaultTheme.disabled} !important;
         cursor: not-allowed;
     }
+
+    ${applyStyleModifiers(BUTTON_MODIFIERS)} //Modifiers should be placed at the end 
 `;
 
 export const TertiaryButton = styled(Button)`
     border: none;
     background : none;
     color : ${defaultTheme.primaryColor};
-    cursor: not-allowed;
+
 
     &:disabled{
         background: none;
@@ -69,4 +114,6 @@ export const TertiaryButton = styled(Button)`
         transition : background 0.2s linear, color 0.2s linear;
         cursor: not-allowed;
     }
+
+    ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
