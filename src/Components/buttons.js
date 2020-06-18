@@ -39,6 +39,60 @@ const BUTTON_MODIFIERS = {
     tertiaryButtonWarning: () => `
     background:none;
     color:${defaultTheme.status.warningColor};
+    `,
+    success: () => `
+    background : ${defaultTheme.status.successColor};
+    color:  ${defaultTheme.textColorInverted};
+
+    &:hover{
+        background : ${defaultTheme.status.successColorHover};
+    }
+
+    &:focus{
+        background : ${defaultTheme.status.successColorHover};
+        outline: 3px solid ${defaultTheme.status.successColorHover};
+    }
+
+    &:active{
+        background : ${defaultTheme.status.successColorActive};
+    }
+    `,
+    secondaryButtonSuccess: () => `
+    background:none;
+    border:2px solid ${defaultTheme.status.successColor};
+    color : ${defaultTheme.status.successColor};
+    outline:none;
+    `,
+    tertiaryButtonSuccess: () => `
+    background:none;
+    color: ${defaultTheme.status.successColor};
+    `,
+    error: () => `
+    background : ${defaultTheme.status.errorColor};
+    color:  ${defaultTheme.textColorInverted};
+
+    &:hover{
+        background : ${defaultTheme.status.errorColorHover};
+    }
+
+    &:focus{
+        background : ${defaultTheme.status.errorColorHover};
+        outline: 3px solid ${defaultTheme.status.errorColorHover};
+    }
+
+    &:active{
+        background : ${defaultTheme.status.errorColorActive};
+    }
+    `,
+    secondaryButtonError: () => `
+    background:none;
+    border:2px solid ${defaultTheme.status.errorColor};
+    color : ${defaultTheme.status.errorColor};
+    outline:none;
+    `,
+    tertiaryButtonError: () => `
+    background:none;
+    color: ${defaultTheme.status.errorColor};
     `
 }
 
