@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { PrimaryButton, SecondaryButton, TertiaryButton } from "./Components/buttons";
+import { SignUpModal } from "./Components";
 import { GlobalStyle, darkTheme, defaultTheme } from "./utils";
 import { ThemeProvider } from "styled-components"; //allows us to pass the theme to our components
 
@@ -23,9 +23,7 @@ const App = () => {
                     justifyContent: "space-around"
                 }}
             >
-                <PrimaryButton>Primary Button</PrimaryButton>&nbsp;
-                <SecondaryButton>Secondary Button</SecondaryButton>&nbsp;
-                <TertiaryButton> Turtiary Button</TertiaryButton>
+                <SignUpModal />
                 <GlobalStyle />
             </div>
         </ThemeProvider>

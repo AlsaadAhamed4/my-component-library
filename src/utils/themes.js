@@ -10,6 +10,8 @@ export const defaultTheme = {
     textColor: neutral[600],// color on light backgrounds
     textColorInverted: neutral[100], //color on dark backgrounds
     primaryFont,  // font
+    formElementBackground: neutral[100],
+    textOnFormElementBackground: neutral[600],
 
     //Added status 
     status: {
@@ -34,6 +36,8 @@ export const darkTheme = {
     textColor: purple[600],// color on light backgrounds
     textColorInverted: neutral[100], //color on dark backgrounds
     primaryFont,  // font
+    formElementBackground: purple[100],
+    textOnFormElementBackground: neutral[100],
 
     //Added status 
     status: {
