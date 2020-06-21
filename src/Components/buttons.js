@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { defaultTheme, typeScale, primaryFont } from "../utils";
+import { typeScale, primaryFont } from "../utils";
 
 import { applyStyleModifiers } from "styled-components-modifiers";
 
